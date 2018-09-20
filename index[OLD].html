@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="https://www.baidu.com">
+<head>
+    <meta charset="utf-8" />
+    <title>水果文档|欢迎您使用超简洁可爱的水果文档哦~</title>
+</head>
+<body>
+    <img src="icon.png" alt="LOGO ICON">
+    <!--<img src="https://upload.cc/i1/2018/08/24/tDA47u.pn" alt="icon.png" width="400" height="385">-->
+    <h1>欢迎您使用又简洁，又可爱的水果文档！:D</h1>
+    <p>注册或者登陆可以获得更好的效果哦！</p>
+    <button type="button" id="Login">点我登陆</button>
+    <button type="button" id="Reg">点我注册</button>
+
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $("#Login").click(function () {
+            $.post("api.php", {
+                type: "login", //这里填调用的类型 [注册填: reg 登录填: login]
+                Mname: "HandsomeSheep", //这里填你的在LOF的用户名 #1
+                MSid: "9l244455q35n8HPa3Wk9CMDl685A9mdp6K", //这里填写系统提供的Sid  #2
+                Plist: 1
+            }
+                function (a) {
+                    var Tr = "https://lof.lf112.net/core/RuMe.php?json=" + a;
+                    window.location.href = Tr;
+                });
+        });
+
+        $("#Reg").click(function () {
+            $.post("api.php", {
+                type: "reg", //这里填调用的类型 [注册填: reg 登录填: login]
+                Mname: "HandsomeSheep", //这里填你的在LOF的用户名  #4
+                MSid: "9l244455q35n8HPa3Wk9CMDl685A9mdp6K", //这里填写系统提供的Sid   #3
+                Plist: 1 //这里默认1即可
+            },
+                function (a) {
+                    var Tr = "https://lof.lf112.net/core/RuMe.php?json=" + a;
+                    window.location.href = Tr;
+                });
+        });
+    </script>
+    <address>
+        Programmed by <a href="ToBaidu.html">CuteSheep</a>.<br>
+        Login Programmed by <a herf="www.lf112.net">LF112</a><br>
+    </address>
+</body>
+</html>
